@@ -1,163 +1,655 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Level · Desarrolladores</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts: Inter + Space Grotesk -->
+  <title>New Level Developers · Ingenieros en Informática & Desarrolladores</title>
+  <meta name="description" content="Somos New Level Developers. Ingenieros en Informática y desarrolladores Full Stack especializados en Odoo ERP, aplicaciones web y bases de datos. Disponibles para proyectos freelance.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="asset/css/style.css">
 </head>
 <body>
 
-  <div class="container bg-dots">
-    <!-- NAV -->
-    <nav class="navbar">
-      <div class="logo"><i class="fas fa-crown"></i> New<span style="background: linear-gradient(145deg,#1f4fcf,#6b9aff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Level</span></div>
-      <ul class="nav-links">
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark"><i class="fas fa-code"></i></span>
+        New Level Developers
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#" class="nav-cta"><i class="fas fa-rocket" style="margin-right: 8px;"></i> Cotizar</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto" class="btn btn-primary" style="padding: 0.55rem 1.1rem; font-size: 0.88rem;">
+          <i class="fas fa-arrow-right"></i> Contactar
+        </a></li>
       </ul>
-    </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="inicio">
-      <div class="hero-content">
-        <div class="tag"><i class="fas fa-bolt" style="margin-right: 6px;"></i> Nueva era digital</div>
-        <h1>Subimos tu negocio al <span class="highlight">siguiente nivel</span></h1>
-        <p>Desarrollamos páginas web, bases de datos y sistemas con un enfoque moderno, seguro y a medida.</p>
-        <div class="hero-buttons">
-          <a href="#contacto" class="btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Empezar proyecto</a>
-          <a href="#servicios" class="btn btn-outline">Explorar</a>
-        </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Menú">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-      <div class="hero-image">
-        <div class="badge-grid">
-          <div class="badge-item"><i class="fas fa-code"></i><span>Web</span></div>
-          <div class="badge-item"><i class="fas fa-database"></i><span>Bases de datos</span></div>
-          <div class="badge-item"><i class="fas fa-server"></i><span>Sistemas</span></div>
-          <div class="badge-item"><i class="fas fa-rocket"></i><span>New Level</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services" id="servicios">
-      <div class="section-header">
-        <h2>Soluciones <span>integrales</span> <i class="fas fa-arrow-right" style="color: #1f4fcf; font-size: 2rem; margin-left: 4px;"></i></h2>
-        <p>Todo lo que necesitas para potenciar tu presencia y operación digital.</p>
-      </div>
-      <div class="cards-grid">
-        <div class="service-card">
-          <i class="fas fa-globe"></i>
-          <h3>Páginas Web</h3>
-          <p>Diseño moderno, responsive y optimizado. Potencia tu marca.</p>
-          <span class="price-tag">Desde $299</span>
-        </div>
-        <div class="service-card special">
-          <i class="fas fa-database"></i>
-          <h3>Bases de Datos</h3>
-          <p>Estructuras robustas, consultas eficientes y respaldos seguros.</p>
-          <span class="price-tag">Desde $399</span>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-cogs"></i>
-          <h3>Sistemas a Medida</h3>
-          <p>Automatización, CRMs, ERP. Adaptados a tu flujo de trabajo.</p>
-          <span class="price-tag">Cotizar</span>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-chart-line"></i>
-          <h3>Consultoría Tech</h3>
-          <p>Te asesoramos para elegir la mejor arquitectura y herramientas.</p>
-          <span class="price-tag">Sin cargo</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA BANNER -->
-    <div class="cta-banner">
-      <h2>¿Listo para el <span>New Level</span>?</h2>
-      <p>Impulsamos tu proyecto con tecnología de punta y un equipo apasionado.</p>
-      <a href="#contacto" class="btn"><i class="fas fa-arrow-right" style="margin-right: 8px;"></i> Hablemos</a>
     </div>
+  </nav>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contacto">
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <h3><i class="fas fa-comment-dots"></i> Conectemos</h3>
-          <p>Cuéntanos tu idea y la hacemos realidad. Estamos a un mensaje de distancia.</p>
-          <div class="info-item">
-            <i class="fas fa-envelope"></i>
-            <span>levelnew2026@gmail.com</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-phone-alt"></i>
-            <span>+58 4241871113</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-map-pin"></i>
-            <span>Venezuela,caracas</span>
-          </div>
-          <div style="margin-top: 1.8rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
-            <span style="background: #e7efff; padding: 0.5rem 1.4rem; border-radius: 60px; font-weight: 600; font-size: 0.85rem;"><i class="fab fa-whatsapp" style="color: #25D366; margin-right: 6px;"></i> +58 4241871113</span>
-          </div>
-        </div>
-        <div class="contact-form">
-          <form id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="nombre"><i class="fas fa-user" style="color: #1f4fcf;"></i> Nombre</label>
-                <input type="text" id="nombre" placeholder="Ana Martínez" required>
-              </div>
-              <div class="form-group">
-                <label for="email"><i class="fas fa-envelope" style="color: #1f4fcf;"></i> Email</label>
-                <input type="email" id="email" placeholder="tu@email.com" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="servicio"><i class="fas fa-tag" style="color: #1f4fcf;"></i> ¿Qué servicio necesitas?</label>
-              <select id="servicio">
-                <option value="web">Página Web</option>
-                <option value="db">Base de Datos</option>
-                <option value="sistema">Sistema a medida</option>
-                <option value="consultoria">Consultoría</option>
-                <option value="otro">Otro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="mensaje"><i class="fas fa-pencil-alt" style="color: #1f4fcf;"></i> Mensaje</label>
-              <textarea id="mensaje" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
-            </div>
-            <button type="submit" class="btn" style="width: 100%; justify-content: center; border-radius: 60px;"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Enviar mensaje</button>
-          </form>
-          <div id="formFeedback" style="margin-top: 1.2rem; font-weight: 600; color: #1f4fcf; display: none; background: #e7efff; padding: 0.8rem; border-radius: 60px; text-align: center;">✅ ¡Mensaje enviado con éxito! Te responderemos pronto.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="container hero-grid">
       <div>
-        <span style="font-weight: 800; font-size: 1.3rem; background: linear-gradient(135deg,#0b1a2a,#1f4fcf); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">New Level Desarrolladores</span>
-        <span style="color: #4b6a84; margin-left: 1rem;">© 2026</span>
+        <span class="eyebrow">
+          <i class="fas fa-circle" style="font-size: 6px;"></i>
+          Disponibles para proyectos
+        </span>
+        <h1>Ingenieros en Informática <em>y desarrolladores</em></h1>
+        <p class="lead">
+          Somos <strong>New Level Developers</strong>, un equipo de dos desarrolladores de Caracas. Diseñamos e implementamos soluciones web escalables, aplicaciones Full Stack y sistemas a medida. Trabajamos desde la base de datos hasta la interfaz, cuidando cada detalle.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Hablemos de tu proyecto
+          </a>
+          <a href="#proyectos" class="btn btn-secondary">
+            <i class="fas fa-folder-open"></i> Ver proyectos
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <strong>+700</strong>
+            <span>Usuarios atendidos</span>
+          </div>
+          <div class="hero-meta-item">
+            <strong>Full Stack</strong>
+            <span>Backend + Frontend</span>
+          </div>
+          <div class="hero-meta-item">
+            <strong>+10</strong>
+            <span>Proyectos entregados</span>
+          </div>
+        </div>
       </div>
-      <div class="socials">
-        <i class="fab fa-linkedin"></i>
-        <i class="fab fa-github"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-x-twitter"></i>
+
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <small>new_level_devs.py</small>
+        </div>
+
+        <div class="code-line">
+          <span class="c"># perfil del equipo</span><br>
+          <span class="k">class</span> <span class="f">NewLevelDevelopers</span>:<br>
+          &nbsp;&nbsp;nombre = <span class="s">'New Level Developers'</span><br>
+          &nbsp;&nbsp;miembros = <span class="p">2</span><br>
+          &nbsp;&nbsp;rol = <span class="s">'Desarrolladores'</span><br>
+          &nbsp;&nbsp;stack = [<span class="s">'Python'</span>, <span class="s">'React'</span>, <span class="s">'PostgreSQL'</span>]<br>
+          &nbsp;&nbsp;disponibles = <span class="k">True</span>
+        </div>
+
+        <div class="hero-badges">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Odoo</span>
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">Django</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">Docker</span>
+        </div>
       </div>
-    </footer>
-  </div>
+    </div>
+  </section>
+
+  <!-- ==================== SOBRE NOSOTROS ==================== -->
+  <section class="section about" id="sobre-nosotros">
+    <div class="container about-grid">
+      <div class="about-team">
+        <div class="team-card reveal">
+          <div class="team-avatar gradient-1">LN</div>
+          <h4>Luis Navarro</h4>
+          <div class="role">Ingeniero en Informática</div>
+          <p class="bio">Desarrollador Full Stack. 23 años, Caracas. Apasionado por construir software robusto y escalable.</p>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-avatar gradient-2">DV</div>
+          <h4>Deivel Virguez</h4>
+          <div class="role">Ingeniero en Informática</div>
+          <p class="bio">Desarrollador Full Stack. Caracas. Enfocado en infraestructura, optimización y despliegues eficientes.</p>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="eyebrow">Sobre nosotros</span>
+        <h2>Construimos software que la gente usa todos los días</h2>
+        <p>
+          Somos <strong>New Level Developers</strong>, un equipo de dos ingenieros en informática graduados en la UPTEC. Nos enfocamos en el desarrollo de soluciones web escalables y en el ecosistema <strong>Odoo ERP</strong>, donde hemos implementado módulos core para áreas de Ventas, Compras y Contabilidad.
+        </p>
+        <p>
+          Nos gusta trabajar en todo el ciclo: desde el diseño y optimización de bases de datos relacionales hasta la creación de interfaces modernas y centradas en el usuario. Hemos liderado proyectos con más de 700 usuarios activos, configurado infraestructura Linux y desarrollado APIs RESTful.
+        </p>
+
+        <div class="about-facts">
+          <div class="about-fact">
+            <i class="fas fa-graduation-cap"></i>
+            <div>
+              <strong>Ingenieros en Informática</strong>
+              <span>UPTEC · 2020-2024</span>
+            </div>
+          </div>
+          <div class="about-fact">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Caracas, Venezuela</strong>
+              <span>Disponibles remoto</span>
+            </div>
+          </div>
+          <div class="about-fact">
+            <i class="fas fa-language"></i>
+            <div>
+              <strong>Español nativo</strong>
+              <span>Inglés técnico</span>
+            </div>
+          </div>
+          <div class="about-fact">
+            <i class="fas fa-briefcase"></i>
+            <div>
+              <strong>Freelance / Full-time</strong>
+              <span>Según el proyecto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICIOS ==================== -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Servicios</span>
+        <h2>En qué podemos ayudarte</h2>
+        <p>Servicios concretos basados en nuestra experiencia real con clientes y proyectos en producción.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-code"></i></div>
+          <h3>Desarrollo Web a medida</h3>
+          <p>Aplicaciones web completas con backend robusto y frontend moderno. Desde el modelo hasta la UI.</p>
+          <div class="stack-mini">
+            <span>React</span><span>Django</span><span>Node</span><span>Tailwind</span>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-cubes"></i></div>
+          <h3>Desarrollo en Odoo ERP</h3>
+          <p>Módulos personalizados, adaptación de flujos nativos, migraciones y optimización de código Python.</p>
+          <div class="stack-mini">
+            <span>Odoo</span><span>Python</span><span>XML</span><span>ORM</span>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-database"></i></div>
+          <h3>Bases de datos</h3>
+          <p>Diseño, modelado, optimización de consultas y mantenimiento de PostgreSQL y MySQL.</p>
+          <div class="stack-mini">
+            <span>PostgreSQL</span><span>MySQL</span><span>SQL</span>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-server"></i></div>
+          <h3>DevOps & Infraestructura</h3>
+          <p>Configuración de servidores Linux, Docker, despliegues y monitoreo automatizado.</p>
+          <div class="stack-mini">
+            <span>Linux</span><span>Docker</span><span>Git</span><span>REST APIs</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCIA ==================== -->
+  <section class="section experience" id="experiencia">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Trayectoria</span>
+        <h2>Experiencia profesional</h2>
+        <p>Dónde hemos trabajado y qué hemos construido en cada lugar.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item current reveal">
+          <div class="timeline-period">Actual</div>
+          <h3 class="timeline-role">Desarrolladores Full Stack</h3>
+          <div class="timeline-company">New Level Developers · Proyectos propios</div>
+          <ul class="timeline-list">
+            <li>Desarrollamos aplicaciones web y sistemas a medida para clientes particulares y empresas.</li>
+            <li>Implementamos soluciones completas: desde la base de datos hasta la interfaz de usuario.</li>
+            <li>Gestionamos despliegues, mantenimiento y soporte técnico continuo.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-period">Actual</div>
+          <h3 class="timeline-role">Desarrolladores Odoo / Backend</h3>
+          <div class="timeline-company">Qinepro Medical</div>
+          <ul class="timeline-list">
+            <li>Diseñamos e implementamos módulos personalizados desde cero para Ventas, Compras y Contabilidad.</li>
+            <li>Optimizamos código Python y corregimos fallos de lógica de negocio en módulos existentes.</li>
+            <li>Creamos modelos avanzados con el ORM de Odoo, estructurando vistas dinámicas y heredadas en XML.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-period">Abril 2025</div>
+          <h3 class="timeline-role">Desarrolladores Odoo y Consultores de Sistemas</h3>
+          <div class="timeline-company">Mercado de Alimentos C.A (Mercal)</div>
+          <ul class="timeline-list">
+            <li>Módulo de Gestión de Documentos con modelos de metadatos y controladores para carga masiva.</li>
+            <li>Configuramos y optimizamos la infraestructura del servidor Odoo para alto rendimiento y alta disponibilidad.</li>
+            <li>Desarrollamos una plataforma de streaming corporativo con gestión de usuarios y permisos granulares.</li>
+            <li>Diseñamos una API para carga, edición y asignación automatizada de metadatos de video.</li>
+            <li>Implementamos la interfaz en React.js con navegación fluida y diseño responsivo.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-period">Proyecto independiente</div>
+          <h3 class="timeline-role">Desarrolladores Full Stack</h3>
+          <div class="timeline-company">Sistema de Gestión de Comedor · 700+ usuarios</div>
+          <ul class="timeline-list">
+            <li>Diseñamos una interfaz intuitiva para consulta de menús diarios y registro de pagos.</li>
+            <li>Desarrollamos un panel administrativo con control de inventarios y analíticas en tiempo real.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-period">Proyecto independiente</div>
+          <h3 class="timeline-role">Ingenieros de Software / Administradores</h3>
+          <div class="timeline-company">Sistema de Monitoreo Automatizado</div>
+          <ul class="timeline-list">
+            <li>Solución integral de monitoreo de uptime/downtime de servidores organizacionales.</li>
+            <li>Rutinas automatizadas de mantenimiento preventivo y depuración de tablas.</li>
+            <li>APIs internas para generación automática de recibos y constancias de trabajo.</li>
+            <li>Sistema de tickets (Helpdesk) y seguridad granular basada en roles (RBAC).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROYECTOS ==================== -->
+  <section class="section" id="proyectos">
+    <div class="container">
+      <div class="projects-head">
+        <div class="section-head" style="margin-bottom: 0;">
+          <span class="eyebrow">Trabajos</span>
+          <h2>Proyectos destacados</h2>
+          <p>Sistemas reales que están o estuvieron en producción.</p>
+        </div>
+
+        <div class="projects-filters" id="projectFilters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="odoo">Odoo</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="infra">Infraestructura</button>
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- NUEVO PROYECTO: SA ELECTRONIC -->
+        <article class="project-card reveal" data-category="web fullstack">
+          <div class="project-thumb gradient-7">
+            <span class="project-status live">En producción</span>
+            <i class="fas fa-tools"></i>
+          </div>
+          <div class="project-body">
+            <span class="cat">Web · SA Electronic</span>
+            <h3>SA Electronic — Reparación y venta</h3>
+            <p>Sitio web corporativo para servicio técnico de laptops, PCs y equipos de seguridad. Incluye catálogo de productos, cotizador por WhatsApp y sección de servicios con garantía.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span>
+            </div>
+            <a href="https://sa-electronic.wuaze.com/" target="_blank" rel="noopener" class="project-link">
+              Ver sitio en vivo <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="odoo">
+          <div class="project-thumb gradient-1">
+            <span class="project-status live">En producción</span>
+            <i class="fas fa-pills"></i>
+          </div>
+          <div class="project-body">
+            <span class="cat">Odoo ERP · Qinepro Medical</span>
+            <h3>Módulos core de Odoo</h3>
+            <p>Módulos personalizados para Ventas, Compras y Contabilidad. Adaptación de flujos nativos y optimización de código Python.</p>
+            <div class="project-tags">
+              <span>Odoo</span><span>Python</span><span>XML</span><span>ORM</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="odoo infra">
+          <div class="project-thumb gradient-2">
+            <span class="project-status live">En producción</span>
+            <i class="fas fa-file-shield"></i>
+          </div>
+          <div class="project-body">
+            <span class="cat">Odoo ERP · Mercal</span>
+            <h3>Gestión de documentos</h3>
+            <p>Módulo personalizado con modelos de metadatos y controladores para carga masiva de archivos. Infraestructura optimizada para alta disponibilidad.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Odoo</span><span>Linux</span><span>Controllers</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="fullstack web">
+          <div class="project-thumb gradient-3">
+            <span class="project-status live">En producción</span>
+            <i class="fas fa-video"></i>
+          </div>
+          <div class="project-body">
+            <span class="cat">Full Stack · Mercal</span>
+            <h3>Plataforma de streaming corporativo</h3>
+            <p>Aplicación web para alojamiento y streaming de video interno con API de metadatos y permisos granulares por rol.</p>
+            <div class="project-tags">
+              <span>React</span><span>REST API</span><span>RBAC</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="fullstack web">
+          <div class="project-thumb gradient-4">
+            <span class="project-status live">En producción</span>
+            <i class="fas fa-utensils"></i>
+          </div>
+          <div class="project-body">
+            <span class="cat">Full Stack · 700+ usuarios</span>
+            <h3>Sistema de gestión de comedor</h3>
+            <p>Interfaz para consulta de menús diarios y pago. Panel administrativo con control de inventarios y analíticas en tiempo real.</p>
+            <div class="project-tags">
+              <span>Full Stack</span><span>Charts</span><span>Inventario</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="infra">
+          <div class="project-thumb gradient-5">
+            <span class="project-status">Activo</span>
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="project-body">
+            <span class="cat">Infraestructura</span>
+            <h3>Monitoreo automatizado de servidores</h3>
+            <p>Supervisión de uptime/downtime y mantenimiento preventivo automatizado con depuración programada de tablas.</p>
+            <div class="project-tags">
+              <span>Linux</span><span>Cron</span><span>SQL</span><span>Monitoring</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="fullstack infra web">
+          <div class="project-thumb gradient-6">
+            <span class="project-status">Activo</span>
+            <i class="fas fa-ticket"></i>
+          </div>
+          <div class="project-body">
+            <span class="cat">Sistema interno</span>
+            <h3>Helpdesk + autogestión de RRHH</h3>
+            <p>Flujo automatizado de tickets de soporte con priorización, más APIs internas para recibos de pago y constancias de trabajo.</p>
+            <div class="project-tags">
+              <span>APIs</span><span>RBAC</span><span>Tickets</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STACK ==================== -->
+  <section class="section stack-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Stack técnico</span>
+        <h2>Herramientas que usamos a diario</h2>
+        <p>Lo que manejamos de verdad, no solo lo que aparece en la lista.</p>
+      </div>
+
+      <div class="stack-grid">
+        <div class="stack-group reveal">
+          <h4><i class="fas fa-code"></i> Lenguajes</h4>
+          <div class="stack-list">
+            <span>Python</span>
+            <span>PHP</span>
+            <span>JavaScript</span>
+            <span>SQL</span>
+            <span>HTML5</span>
+            <span>CSS3</span>
+          </div>
+        </div>
+
+        <div class="stack-group reveal">
+          <h4><i class="fas fa-cubes"></i> Frameworks</h4>
+          <div class="stack-list">
+            <span>Odoo ERP</span>
+            <span>React.js</span>
+            <span>Django</span>
+            <span>Bootstrap</span>
+            <span>Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="stack-group reveal">
+          <h4><i class="fas fa-database"></i> Bases de datos</h4>
+          <div class="stack-list">
+            <span>PostgreSQL</span>
+            <span>MySQL</span>
+          </div>
+        </div>
+
+        <div class="stack-group reveal">
+          <h4><i class="fas fa-tools"></i> DevOps</h4>
+          <div class="stack-list">
+            <span>APIs RESTful</span>
+            <span>Linux</span>
+            <span>Docker</span>
+            <span>Git / GitHub</span>
+          </div>
+        </div>
+
+        <div class="stack-group reveal">
+          <h4><i class="fas fa-users"></i> Metodologías</h4>
+          <div class="stack-list">
+            <span>Scrum</span>
+            <span>Ágil</span>
+          </div>
+        </div>
+
+        <div class="stack-group reveal">
+          <h4><i class="fas fa-language"></i> Idiomas</h4>
+          <div class="stack-list">
+            <span>Español nativo</span>
+            <span>Inglés técnico</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EDUCACIÓN ==================== -->
+  <section class="section" id="educacion">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Formación</span>
+        <h2>Educación</h2>
+      </div>
+
+      <div class="education-grid">
+        <div class="edu-card reveal">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div>
+            <h4>Ingeniería en Informática</h4>
+            <div class="edu-inst">Universidad Politécnica Territorial de Caracas (UPTEC)</div>
+            <div class="edu-period">2020 — 2024</div>
+          </div>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-icon"><i class="fas fa-school"></i></div>
+          <div>
+            <h4>Bachiller en Ciencias</h4>
+            <div class="edu-inst">L.B. Antonio Muñoz Tébar</div>
+            <div class="edu-period">2016 — 2020</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACTO ==================== -->
+  <section class="container">
+    <div class="contact" id="contacto">
+      <div>
+        <h2>¿Trabajamos juntos?</h2>
+        <p class="desc">
+          Escribinos por el formulario o directo por WhatsApp. Solemos responder en menos de 24 horas.
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="ico"><i class="fas fa-envelope"></i></span>
+            <a href="mailto:levelnew2026@gmail.com">levelnew2026@gmail.com</a>
+          </li>
+          <li>
+            <span class="ico"><i class="fab fa-whatsapp"></i></span>
+            <a href="https://wa.me/584241871113" target="_blank" rel="noopener">+58 424-187-1113</a>
+          </li>
+          <li>
+            <span class="ico"><i class="fas fa-location-dot"></i></span>
+            <span>Caracas, Venezuela</span>
+          </li>
+          <li>
+            <span class="ico"><i class="fas fa-circle" style="font-size: 8px; color: #10b981;"></i></span>
+            <span>Disponibles para proyectos freelance</span>
+          </li>
+        </ul>
+      </div>
+
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="tu@email.com" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="servicio">¿Qué necesitás?</label>
+          <select id="servicio">
+            <option value="Desarrollo Web a medida">Desarrollo Web a medida</option>
+            <option value="Desarrollo en Odoo ERP">Desarrollo en Odoo ERP</option>
+            <option value="Base de datos">Bases de datos</option>
+            <option value="DevOps / Infraestructura">DevOps / Infraestructura</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="mensaje">Contanos sobre tu proyecto</label>
+          <textarea id="mensaje" placeholder="Estamos buscando a alguien que nos ayude con..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i> Enviar mensaje
+        </button>
+
+        <div class="form-feedback" id="formFeedback">
+          <i class="fas fa-check-circle"></i>
+          <span>¡Listo! Te respondemos en menos de 24 horas.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo" style="font-size: 1.1rem;">
+            <span class="logo-mark" style="width: 30px; height: 30px;"><i class="fas fa-code" style="font-size: 0.8rem;"></i></span>
+            New Level Developers
+          </a>
+          <p>Equipo de Ingenieros en Informática y desarrolladores Full Stack. Caracas, Venezuela.</p>
+        </div>
+
+        <div>
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="#servicios">Desarrollo Web</a></li>
+            <li><a href="#servicios">Odoo ERP</a></li>
+            <li><a href="#servicios">Bases de datos</a></li>
+            <li><a href="#servicios">DevOps</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Equipo</h5>
+          <ul>
+            <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#educacion">Educación</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Contacto</h5>
+          <ul>
+            <li><a href="mailto:levelnew2026@gmail.com">levelnew2026@gmail.com</a></li>
+            <li><a href="https://wa.me/584241871113" target="_blank">+58 424-187-1113</a></li>
+            <li>Caracas, Venezuela</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 New Level Developers. Todos los derechos reservados.</span>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="asset/js/index.js"></script>
-
 </body>
 </html>
