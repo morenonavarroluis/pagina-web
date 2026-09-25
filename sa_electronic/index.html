@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA Electronic · Reparación y venta de tecnología</title>
+    <meta name="description" content="Reparación de laptops y PCs, venta de repuestos y asesoría técnica. Atención personalizada por WhatsApp e Instagram.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        sa: {
+                            red: '#c8102e',
+                            'red-soft': '#e63950',
+                            blue: '#1a42b8',
+                            'blue-soft': '#3b6ef5',
+                            dark: '#0f131a',
+                            cardDark: '#181e29',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -4px rgba(0, 0, 0, 0.08)',
+                        'lift': '0 12px 32px -8px rgba(0, 0, 0, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        
+        .ig-gradient {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        
+        .sa-gradient-text {
+            background: linear-gradient(120deg, #c8102e 0%, #1a42b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Scrollbar sutil */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+        .dark ::-webkit-scrollbar-thumb { background: #334155; }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Transición suave para el tema */
+        body, header, footer, section, .theme-transition {
+            transition: background-color 0.35s ease, border-color 0.35s ease, color 0.2s ease;
+        }
+        
+        /* Aparición sutil al hacer scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-sa-dark text-slate-800 dark:text-slate-100 min-h-screen flex flex-col">
+
+    <!-- ================= HEADER ================= -->
+    <header class="sticky top-0 z-40 w-full bg-white/85 dark:bg-sa-dark/85 backdrop-blur-lg border-b border-slate-200/80 dark:border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 shrink-0">
+                <div class="h-11 w-auto flex items-center justify-center px-2 py-1 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+                    <svg viewBox="0 0 320 140" class="h-8 w-auto" aria-label="SA Electronic">
+                        <path d="M 120 20 L 40 20 C 20 20 10 32 10 48 C 10 65 25 72 45 72 L 95 72 C 115 72 120 78 120 85 C 120 92 110 98 90 98 L 20 98" fill="none" stroke="#c8102e" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 60 98 L 130 98 C 150 98 165 88 175 72 L 210 20 L 255 98 M 160 72 L 235 72" fill="none" stroke="#1a42b8" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+                        <text x="10" y="132" font-family="Inter, sans-serif" font-weight="900" font-size="25" letter-spacing="7" fill="#0f131a" class="dark:fill-white">ELECTRONIC</text>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Navegación escritorio -->
+            <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+                <a href="#servicios" class="px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-sa-blue dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">Servicios</a>
+                <a href="#catalogo" class="px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-sa-blue dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">Catálogo</a>
+                <a href="#cotizador" class="px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-sa-blue dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">Cotizador</a>
+                <a href="#faq" class="px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-sa-blue dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">Preguntas</a>
+            </nav>
+
+            <!-- Acciones -->
+            <div class="flex items-center gap-2">
+                <button id="themeToggleBtn" aria-label="Cambiar tema" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-sa-blue dark:hover:text-amber-400 transition-colors border border-slate-200 dark:border-slate-700">
+                    <i id="themeIcon" class="fas fa-moon text-base"></i>
+                </button>
+
+                <a href="https://www.instagram.com/sa_electronic/?hl=es" target="_blank" rel="noopener noreferrer"
+                   class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-sa-red to-sa-blue hover:opacity-90 transition-opacity shadow-sm">
+                    <i class="fab fa-instagram text-sm"></i>
+                    <span>@sa_electronic</span>
+                </a>
+
+                <button id="mobileMenuBtn" class="md:hidden text-slate-700 dark:text-slate-200 p-2 text-xl" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-sa-cardDark border-t border-slate-200 dark:border-slate-800 px-5 py-4 space-y-1 shadow-lg">
+            <a href="#servicios" class="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Servicios</a>
+            <a href="#catalogo" class="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Catálogo</a>
+            <a href="#cotizador" class="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Cotizador</a>
+            <a href="#faq" class="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Preguntas</a>
+            <a href="https://www.instagram.com/sa_electronic/?hl=es" target="_blank" rel="noopener noreferrer"
+               class="ig-gradient text-white text-center font-semibold px-5 py-3 rounded-xl flex items-center justify-center gap-2 mt-2">
+                <i class="fab fa-instagram"></i>
+                <span>Escríbenos por Instagram</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-1">
+
+        <!-- ================= HERO ================= -->
+        <section class="relative pt-14 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+            <!-- Fondo decorativo -->
+            <div class="absolute inset-0 -z-10 bg-gradient-to-b from-slate-100/60 via-transparent to-transparent dark:from-slate-900/40"></div>
+            <div class="absolute top-20 -right-32 w-96 h-96 rounded-full bg-sa-blue/5 dark:bg-sa-blue/10 blur-3xl -z-10"></div>
+            <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-sa-red/5 dark:bg-sa-red/10 blur-3xl -z-10"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sa-red/8 dark:bg-sa-red/15 border border-sa-red/15 text-sa-red dark:text-red-400 text-xs font-semibold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sa-red animate-pulse"></span>
+                            <span>Atención el mismo día</span>
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight leading-[1.1] text-slate-900 dark:text-white">
+                            Tu equipo en buenas manos,<br class="hidden sm:block"/>
+                            <span class="sa-gradient-text">reparado como se debe</span>
+                        </h1>
+                        
+                        <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Reparamos laptops, PCs y equipos de seguridad. También vendemos repuestos originales y compatibles con garantía real. Sin vueltas, sin letra chica.
+                        </p>
+
+                        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+                            <a href="#catalogo" 
+                               class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-sa-blue hover:bg-blue-700 text-white font-semibold text-sm shadow-lg shadow-sa-blue/20 transition-all hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
+                                <i class="fas fa-store text-sm"></i>
+                                <span>Ver catálogo</span>
+                            </a>
+                            <a href="https://wa.me/?text=Hola%20SA%20Electronic,%20necesito%20una%20consulta" target="_blank"
+                               class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-semibold text-sm border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-center flex items-center justify-center gap-2">
+                                <i class="fab fa-whatsapp text-emerald-500 text-base"></i>
+                                <span>Escribir por WhatsApp</span>
+                            </a>
+                        </div>
+
+                        <div class="pt-8 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
+                            <div>
+                                <p class="text-2xl font-extrabold text-sa-red">+500</p>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Equipos reparados</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-extrabold text-sa-blue">24h</p>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Diagnóstico express</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-extrabold text-slate-800 dark:text-white">6 meses</p>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Garantía en reparaciones</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta lateral -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-sm">
+                            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-br from-sa-red/20 to-sa-blue/20 blur-2xl"></div>
+                            
+                            <div class="relative bg-white dark:bg-sa-cardDark rounded-2xl p-7 border border-slate-200 dark:border-slate-800 shadow-lift text-center">
+                                <div class="w-20 h-20 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-sa-red/10 to-sa-blue/10 border border-slate-200 dark:border-slate-800 flex items-center justify-center">
+                                    <i class="fas fa-screwdriver-wrench text-3xl text-sa-red"></i>
+                                </div>
+                                
+                                <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">SA Electronic</h3>
+                                <p class="text-sa-blue dark:text-cyan-400 text-[11px] font-semibold tracking-widest uppercase mt-1 mb-5">Reparación · Venta · Asesoría</p>
+                                
+                                <div class="bg-slate-50 dark:bg-slate-900 rounded-xl p-3 border border-slate-200 dark:border-slate-800 flex items-center justify-center gap-2.5">
+                                    <i class="fab fa-instagram text-xl text-pink-500"></i>
+                                    <span class="text-slate-700 dark:text-slate-200 font-mono font-semibold text-sm">@sa_electronic</span>
+                                </div>
+
+                                <div class="mt-5 flex justify-center gap-2 text-[11px] font-medium">
+                                    <span class="bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400">
+                                        <i class="fas fa-shield-check text-sa-red mr-1"></i> Garantía escrita
+                                    </span>
+                                    <span class="bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400">
+                                        <i class="fas fa-truck-fast text-sa-blue mr-1"></i> Envíos
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SERVICIOS ================= -->
+        <section id="servicios" class="py-20 bg-white dark:bg-sa-dark border-t border-slate-100 dark:border-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mb-14">
+                    <p class="text-xs uppercase tracking-widest font-bold text-sa-red mb-2">Lo que hacemos</p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Servicios pensados para que no pierdas tiempo</h2>
+                    <p class="text-slate-600 dark:text-slate-400 mt-3 text-base">
+                        Cada trabajo pasa por revisión, prueba y control de calidad antes de volver a tus manos.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <!-- Servicio 1 -->
+                    <div class="reveal group bg-slate-50 dark:bg-sa-cardDark rounded-2xl p-6 border border-slate-200 dark:border-slate-800 hover:border-sa-red/40 hover:shadow-soft transition-all">
+                        <div class="w-11 h-11 rounded-xl bg-sa-red/10 flex items-center justify-center text-sa-red text-lg mb-5 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Diagnóstico y reparación</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Revisamos placas, circuitos y componentes. Te decimos qué falla y cuánto cuesta antes de tocar nada.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="reveal group bg-slate-50 dark:bg-sa-cardDark rounded-2xl p-6 border border-slate-200 dark:border-slate-800 hover:border-sa-blue/40 hover:shadow-soft transition-all">
+                        <div class="w-11 h-11 rounded-xl bg-sa-blue/10 flex items-center justify-center text-sa-blue text-lg mb-5 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-memory"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Venta de repuestos</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            SSD, RAM, cargadores, periféricos y más. Originales o compatibles, siempre con garantía.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="reveal group bg-slate-50 dark:bg-sa-cardDark rounded-2xl p-6 border border-slate-200 dark:border-slate-800 hover:border-sa-red/40 hover:shadow-soft transition-all">
+                        <div class="w-11 h-11 rounded-xl bg-sa-red/10 flex items-center justify-center text-sa-red text-lg mb-5 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-fan"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Mantenimiento preventivo</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Limpieza profunda, cambio de pasta térmica y control de temperaturas para alargar la vida de tu equipo.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 4 -->
+                    <div class="reveal group bg-slate-50 dark:bg-sa-cardDark rounded-2xl p-6 border border-slate-200 dark:border-slate-800 hover:border-sa-blue/40 hover:shadow-soft transition-all">
+                        <div class="w-11 h-11 rounded-xl bg-sa-blue/10 flex items-center justify-center text-sa-blue text-lg mb-5 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Asesoría honesta</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Si no vale la pena repararlo, te lo decimos. Te ayudamos a elegir la mejor opción según tu presupuesto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CATÁLOGO ================= -->
+        <section id="catalogo" class="py-20 bg-slate-100/60 dark:bg-slate-950/40 border-t border-b border-slate-200 dark:border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-5">
+                    <div class="max-w-xl">
+                        <p class="text-xs uppercase tracking-widest font-bold text-sa-blue dark:text-cyan-400 mb-2">Disponible ahora</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Catálogo</h2>
+                        <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm">
+                            Buscá por nombre o categoría. Si algo te interesa, escribinos y coordinamos.
+                        </p>
+                    </div>
+
+                    <div class="relative w-full md:w-72">
+                        <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar producto..."
+                               class="w-full bg-white dark:bg-sa-cardDark border border-slate-300 dark:border-slate-700 focus:border-sa-blue rounded-xl py-2.5 pl-10 pr-4 text-sm text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sa-blue/15 transition-all shadow-sm">
+                    </div>
+                </div>
+
+                <!-- Filtros -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-8 no-scrollbar">
+                    <button class="filter-btn active px-4 py-2 rounded-lg bg-sa-blue text-white text-xs font-semibold shadow-sm transition-all whitespace-nowrap" data-category="todos">Todos</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-sa-cardDark text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-sa-blue text-xs font-semibold transition-all whitespace-nowrap" data-category="laptops">Laptops & PCs</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-sa-cardDark text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-sa-blue text-xs font-semibold transition-all whitespace-nowrap" data-category="seguridad">Seguridad</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-sa-cardDark text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-sa-blue text-xs font-semibold transition-all whitespace-nowrap" data-category="redes">Redes</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-sa-cardDark text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-sa-blue text-xs font-semibold transition-all whitespace-nowrap" data-category="gamer">Gaming</button>
+                </div>
+
+                <!-- Grid de productos -->
+                <div id="productsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+                <!-- Sin resultados -->
+                <div id="noResults" class="hidden text-center py-16">
+                    <i class="fas fa-box-open text-4xl text-slate-300 dark:text-slate-600 mb-3"></i>
+                    <p class="text-slate-600 dark:text-slate-400 font-semibold">No encontramos nada con esa búsqueda</p>
+                    <p class="text-slate-400 dark:text-slate-500 text-sm mt-1">Probá con otra palabra o cambiá de categoría.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= COTIZADOR ================= -->
+        <section id="cotizador" class="py-20 bg-white dark:bg-sa-dark">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <p class="text-xs uppercase tracking-widest font-bold text-sa-red mb-2">Cotizá en 10 segundos</p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Contanos qué necesitás</h2>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm">Elegí las opciones y te armamos el mensaje listo para enviar.</p>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-sa-cardDark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-soft">
+                    <form id="calculatorForm" class="space-y-7">
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-800 dark:text-slate-200 mb-3">¿Qué equipo tenés?</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="device" value="Laptop" class="peer hidden" checked>
+                                    <div class="p-3 rounded-xl bg-white dark:bg-slate-900 text-center text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 peer-checked:border-sa-blue peer-checked:bg-sa-blue/5 peer-checked:text-sa-blue text-xs font-semibold transition-all">
+                                        <i class="fas fa-laptop block text-lg mb-1"></i> Laptop
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="device" value="PC de escritorio" class="peer hidden">
+                                    <div class="p-3 rounded-xl bg-white dark:bg-slate-900 text-center text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 peer-checked:border-sa-blue peer-checked:bg-sa-blue/5 peer-checked:text-sa-blue text-xs font-semibold transition-all">
+                                        <i class="fas fa-desktop block text-lg mb-1"></i> PC Desktop
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="device" value="Equipo de seguridad" class="peer hidden">
+                                    <div class="p-3 rounded-xl bg-white dark:bg-slate-900 text-center text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 peer-checked:border-sa-blue peer-checked:bg-sa-blue/5 peer-checked:text-sa-blue text-xs font-semibold transition-all">
+                                        <i class="fas fa-video block text-lg mb-1"></i> Seguridad
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="device" value="Otro dispositivo" class="peer hidden">
+                                    <div class="p-3 rounded-xl bg-white dark:bg-slate-900 text-center text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 peer-checked:border-sa-blue peer-checked:bg-sa-blue/5 peer-checked:text-sa-blue text-xs font-semibold transition-all">
+                                        <i class="fas fa-microchip block text-lg mb-1"></i> Otro
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="serviceType" class="block text-sm font-semibold text-slate-800 dark:text-slate-200 mb-2">¿Qué servicio necesitás?</label>
+                            <select id="serviceType" class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-3 text-sm text-slate-800 dark:text-slate-200 focus:border-sa-blue focus:outline-none focus:ring-2 focus:ring-sa-blue/15 shadow-sm">
+                                <option value="Mantenimiento preventivo y limpieza profunda">Mantenimiento preventivo y limpieza</option>
+                                <option value="Diagnóstico y reparación de placa madre">Reparación de placa madre</option>
+                                <option value="Instalación de SSD o ampliación de RAM">Upgrade de SSD o RAM</option>
+                                <option value="Formateo e instalación de sistema operativo">Formateo e instalación de Windows</option>
+                                <option value="Otro (lo detallo en el mensaje)">Otro (lo detallo en el mensaje)</option>
+                            </select>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="text-center sm:text-left">
+                                <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Te respondemos al toque</p>
+                                <p class="text-lg font-extrabold text-sa-blue dark:text-cyan-400">Por WhatsApp</p>
+                            </div>
+                            <button type="button" id="sendQuoteBtn" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
+                                <i class="fab fa-whatsapp text-base"></i>
+                                <span>Enviar consulta</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= INSTAGRAM ================= -->
+        <section class="py-16 bg-slate-100/60 dark:bg-slate-950/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white dark:bg-sa-cardDark rounded-2xl p-8 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-soft flex flex-col lg:flex-row items-center justify-between gap-6">
+                    <div class="text-center lg:text-left space-y-2">
+                        <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white">Mirá lo que vamos subiendo</h3>
+                        <p class="text-slate-600 dark:text-slate-400 max-w-lg text-sm">
+                            Reparaciones en proceso, stock nuevo y datos útiles. Todo por Instagram.
+                        </p>
+                        <span class="inline-block text-xs font-mono font-semibold text-sa-red bg-sa-red/8 px-3 py-1.5 rounded-full border border-sa-red/15 mt-1">
+                            <i class="fab fa-instagram mr-1"></i> @sa_electronic
+                        </span>
+                    </div>
+
+                    <a href="https://www.instagram.com/sa_electronic/?hl=es" target="_blank" rel="noopener noreferrer"
+                       class="ig-gradient text-white font-semibold text-sm px-6 py-3.5 rounded-xl flex items-center gap-2.5 shadow-md transition-transform hover:scale-[1.03] active:scale-100 whitespace-nowrap">
+                        <i class="fab fa-instagram text-xl"></i>
+                        <span>Ir al perfil</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FAQ ================= -->
+        <section id="faq" class="py-20 bg-white dark:bg-sa-dark border-t border-slate-200 dark:border-slate-800">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <p class="text-xs uppercase tracking-widest font-bold text-sa-blue mb-2">Antes de escribirnos</p>
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Preguntas frecuentes</h2>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="faq-item bg-slate-50 dark:bg-sa-cardDark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                        <button class="faq-toggle w-full p-4 text-left flex justify-between items-center gap-4 text-slate-800 dark:text-slate-200 font-semibold text-sm hover:text-sa-blue transition-colors">
+                            <span>¿Los equipos reacondicionados tienen garantía?</span>
+                            <i class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-4 pb-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-200 dark:border-slate-800/60 pt-3">
+                            Sí. Todos los equipos que vendemos pasan por pruebas de hardware y tienen garantía escrita. Si algo falla en el período de garantía, lo revisamos sin costo.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-slate-50 dark:bg-sa-cardDark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                        <button class="faq-toggle w-full p-4 text-left flex justify-between items-center gap-4 text-slate-800 dark:text-slate-200 font-semibold text-sm hover:text-sa-blue transition-colors">
+                            <span>¿Cómo te hago llegar mi equipo?</span>
+                            <i class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-4 pb-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-200 dark:border-slate-800/60 pt-3">
+                            Coordinamos por WhatsApp o Instagram. Según dónde estés, podemos recibirlo en persona o arreglar un envío.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-slate-50 dark:bg-sa-cardDark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                        <button class="faq-toggle w-full p-4 text-left flex justify-between items-center gap-4 text-slate-800 dark:text-slate-200 font-semibold text-sm hover:text-sa-blue transition-colors">
+                            <span>¿Hacen envíos de repuestos?</span>
+                            <i class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-4 pb-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-200 dark:border-slate-800/60 pt-3">
+                            Sí, despachamos a todo el país con seguimiento. Consultanos disponibilidad y costo de envío según tu zona.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-slate-50 dark:bg-sa-cardDark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                        <button class="faq-toggle w-full p-4 text-left flex justify-between items-center gap-4 text-slate-800 dark:text-slate-200 font-semibold text-sm hover:text-sa-blue transition-colors">
+                            <span>¿Cuánto tarda una reparación?</span>
+                            <i class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-4 pb-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-200 dark:border-slate-800/60 pt-3">
+                            Depende del trabajo. Un mantenimiento preventivo suele estar listo en 24-48 h. Reparaciones más complejas pueden llevar algunos días. Siempre te avisamos antes de arrancar.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-slate-900 text-slate-400 py-10 text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="p-1.5 bg-white rounded-lg">
+                    <svg viewBox="0 0 320 140" class="h-5 w-auto">
+                        <path d="M 120 20 L 40 20 C 20 20 10 32 10 48 C 10 65 25 72 45 72 L 95 72 C 115 72 120 78 120 85 C 120 92 110 98 90 98 L 20 98" fill="none" stroke="#c8102e" stroke-width="22" stroke-linecap="round"/>
+                        <path d="M 60 98 L 130 98 C 150 98 165 88 175 72 L 210 20 L 255 98 M 160 72 L 235 72" fill="none" stroke="#1a42b8" stroke-width="22" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="text-white font-semibold text-xs">SA Electronic © 2026</span>
+            </div>
+
+            <div class="flex gap-5 text-xs">
+                <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
+                <a href="#catalogo" class="hover:text-white transition-colors">Catálogo</a>
+                <a href="#cotizador" class="hover:text-white transition-colors">Cotizador</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-3 text-lg">
+                <a href="https://www.instagram.com/sa_electronic/?hl=es" target="_blank" class="hover:text-pink-400 transition-colors" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/?text=Hola%20SA%20Electronic" target="_blank" class="hover:text-emerald-400 transition-colors" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= BOTONES FLOTANTES ================= -->
+    <div class="fixed bottom-5 right-5 z-40 flex flex-col gap-2.5">
+        <a href="https://www.instagram.com/sa_electronic/?hl=es" target="_blank" rel="noopener noreferrer"
+           class="w-11 h-11 rounded-full ig-gradient text-white flex items-center justify-center text-lg shadow-lg hover:scale-110 transition-transform"
+           title="Instagram @sa_electronic">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/?text=Hola%20SA%20Electronic,%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener noreferrer"
+           class="w-11 h-11 rounded-full bg-emerald-500 text-white flex items-center justify-center text-lg shadow-lg hover:scale-110 transition-transform"
+           title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- ================= MODAL PRODUCTO ================= -->
+    <div id="productModal" class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-sa-cardDark max-w-md w-full rounded-2xl border border-slate-200 dark:border-slate-800 p-6 relative shadow-2xl">
+            <button id="closeModalBtn" class="absolute top-3.5 right-3.5 text-slate-400 hover:text-slate-700 dark:hover:text-white text-lg p-1.5" aria-label="Cerrar">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script>
+        /* ========== TEMA ========== */
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            themeIcon.className = 'fas fa-sun text-base text-amber-400';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = html.classList.toggle('dark');
+            themeIcon.className = isDark
+                ? 'fas fa-sun text-base text-amber-400'
+                : 'fas fa-moon text-base';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        /* ========== PRODUCTOS ========== */
+        const products = [
+            {
+                id: 1,
+                name: "Cámara Imou Ranger 2",
+                category: "seguridad",
+                badge: "Nuevo",
+                icon: "fa-video",
+                badgeColor: "bg-sa-blue text-white",
+                specs: ["Resolución 3MP", "Visión nocturna", "Audio bidireccional"],
+                description: "Ideal para monitorear tu casa o negocio desde el celular. Se conecta por WiFi y graba en la nube o microSD."
+            },
+            {
+                id: 2,
+                name: 'Laptop Dell 15.6" Core i7',
+                category: "laptops",
+                badge: "Reacondicionada",
+                icon: "fa-laptop",
+                badgeColor: "bg-sa-red text-white",
+                specs: ["Intel Core i7 8va gen", "16 GB RAM DDR4", "SSD 512 GB NVMe", "Windows 11 + Office"],
+                description: "Rinde bien para diseño, programación o multitarea pesada. Viene lista para usar, con Windows y Office instalados."
+            },
+            {
+                id: 3,
+                name: "Mini PC Dell Core i5",
+                category: "laptops",
+                badge: "Reacondicionado",
+                icon: "fa-server",
+                badgeColor: "bg-sa-red text-white",
+                specs: ["Intel Core i5 4ta gen", "8 GB RAM DDR4", "SSD 256 GB", "Garantía SA Electronic"],
+                description: "Chiquito pero cumplidor. Perfecto para oficina, punto de venta o trabajo liviano. Ocupa casi nada de espacio."
+            },
+            {
+                id: 4,
+                name: "Mando Redragon G711",
+                category: "gamer",
+                badge: "Gaming",
+                icon: "fa-gamepad",
+                badgeColor: "bg-purple-600 text-white",
+                specs: ["Inalámbrico 2.4 GHz", "Compatible PC y Android", "Batería recargable"],
+                description: "Respuesta rápida y agarre cómodo. Ideal para viciar unas horas sin cables de por medio."
+            },
+            {
+                id: 5,
+                name: 'Laptop Lenovo ThinkPad 14"',
+                category: "laptops",
+                badge: "Reacondicionada",
+                icon: "fa-laptop",
+                badgeColor: "bg-sa-red text-white",
+                specs: ["Intel Core i5 8va gen", "8 GB RAM DDR4", "SSD 256 GB NVMe", "Windows 11 + Office"],
+                description: "Teclado cómodo, resistente y confiable. Una de esas laptops que aguantan el maltrato diario."
+            },
+            {
+                id: 6,
+                name: "Extensor Mesh Cudy AX3000",
+                category: "redes",
+                badge: "Redes",
+                icon: "fa-wifi",
+                badgeColor: "bg-sa-blue text-white",
+                specs: ["WiFi 6 dual band", "Cobertura mesh", "Fácil configuración"],
+                description: "Si tenés zonas muertas de WiFi en tu casa, esto lo soluciona. Se configura desde el celular en minutos."
+            }
+        ];
+
+        const productsGrid = document.getElementById('productsGrid');
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const noResults = document.getElementById('noResults');
+        const modal = document.getElementById('productModal');
+        const modalContent = document.getElementById('modalContent');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        let currentCategory = 'todos';
+        let searchQuery = '';
+
+        function renderProducts() {
+            const filtered = products.filter(p => {
+                const matchCat = currentCategory === 'todos' || p.category === currentCategory;
+                const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    p.specs.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));
+                return matchCat && matchSearch;
+            });
+
+            if (!filtered.length) {
+                productsGrid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            productsGrid.innerHTML = filtered.map(p => `
+                <div class="reveal bg-white dark:bg-sa-cardDark rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 flex flex-col group hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300">
+                    <div class="h-44 bg-slate-100 dark:bg-slate-900 flex items-center justify-center relative border-b border-slate-200 dark:border-slate-800">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${p.badgeColor}">
+                            ${p.badge}
+                        </span>
+                        <i class="fas ${p.icon} text-4xl text-sa-blue group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] font-bold text-sa-red uppercase tracking-widest">${p.category}</span>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1 mb-3 leading-snug">${p.name}</h3>
+                            <ul class="space-y-1 text-xs text-slate-600 dark:text-slate-400 mb-5">
+                                ${p.specs.map(s => `<li class="flex items-center gap-2"><i class="fas fa-check text-sa-blue text-[10px]"></i> ${s}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <button onclick="openModal(${p.id})" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-sa-blue hover:text-white text-slate-700 dark:text-slate-200 font-semibold text-xs border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2">
+                            <i class="fas fa-eye text-[11px]"></i>
+                            <span>Ver detalle</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Re-observar elementos revelados
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        function openModal(id) {
+            const item = products.find(p => p.id === id);
+            if (!item) return;
+
+            modalContent.innerHTML = `
+                <div class="text-center mb-4">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-sa-blue/8 text-sa-blue flex items-center justify-center text-2xl mb-3 border border-sa-blue/15">
+                        <i class="fas ${item.icon}"></i>
+                    </div>
+                    <span class="text-[10px] text-sa-red font-bold uppercase tracking-widest">${item.badge}</span>
+                    <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mt-1">${item.name}</h3>
+                </div>
+
+                <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed">${item.description}</p>
+
+                <div class="bg-slate-50 dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 mb-5">
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">Especificaciones</p>
+                    <ul class="space-y-1 text-xs text-slate-700 dark:text-slate-300">
+                        ${item.specs.map(s => `<li class="flex items-center gap-2"><i class="fas fa-check text-sa-red text-[10px]"></i> ${s}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="space-y-2">
+                    <a href="https://wa.me/?text=Hola%20SA%20Electronic,%20me%20interesa%20${encodeURIComponent(item.name)}" target="_blank"
+                       class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors">
+                        <i class="fab fa-whatsapp text-base"></i> Consultar por WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/sa_electronic/?hl=es" target="_blank"
+                       class="w-full py-2.5 rounded-xl ig-gradient text-white font-semibold text-sm flex items-center justify-center gap-2 transition-opacity hover:opacity-90">
+                        <i class="fab fa-instagram text-base"></i> Escribir por Instagram
+                    </a>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+        }
+
+        closeModalBtn.addEventListener('click', () => modal.classList.add('hidden'));
+        modal.addEventListener('click', e => { if (e.target === modal) modal.classList.add('hidden'); });
+
+        // Filtros
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-sa-blue', 'text-white');
+                    b.classList.add('bg-white', 'dark:bg-sa-cardDark', 'text-slate-600', 'dark:text-slate-300');
+                });
+                btn.classList.add('active', 'bg-sa-blue', 'text-white');
+                btn.classList.remove('bg-white', 'dark:bg-sa-cardDark', 'text-slate-600', 'dark:text-slate-300');
+                currentCategory = btn.dataset.category;
+                renderProducts();
+            });
+        });
+
+        // Búsqueda
+        searchInput.addEventListener('input', e => {
+            searchQuery = e.target.value;
+            renderProducts();
+        });
+
+        // Menú móvil
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // FAQ
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Cotizador → WhatsApp
+        document.getElementById('sendQuoteBtn').addEventListener('click', () => {
+            const device = document.querySelector('input[name="device"]:checked').value;
+            const service = document.getElementById('serviceType').value;
+            const msg = `Hola SA Electronic 👋\n\nEquipo: ${device}\nServicio: ${service}\n\n¿Me pueden dar una idea de costo y tiempo? Gracias.`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+
+        // Animación de aparición
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Render inicial
+        renderProducts();
+    </script>
+</body>
+</html>
